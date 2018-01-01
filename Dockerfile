@@ -10,6 +10,8 @@ RUN apt-get update && \
         -t experimental tinc && \
     apt-get clean
 
+RUN adduser --disabled-password --disabled-login --system --uid 655 --home /etc/tinc tinc
+
 EXPOSE 655/tcp 655/udp
 
 VOLUME /etc/tinc
