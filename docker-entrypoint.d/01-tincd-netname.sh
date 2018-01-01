@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-# check environment variable TINC_NETNAME
+# check environment variable TINC_USER
 if [ -z "${TINC_USER}" ]; then
     echo "Environment variable TINC_USER is required"
     exit 1
