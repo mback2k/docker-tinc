@@ -18,3 +18,5 @@ echo "exec /usr/sbin/tincd -D -U ${TINC_USER} -n ${TINC_NETNAME}" >> /usr/local/
 
 chown --reference=/usr/sbin/tincd /usr/local/sbin/tincd
 chmod --reference=/usr/sbin/tincd /usr/local/sbin/tincd
+
+exit 0
