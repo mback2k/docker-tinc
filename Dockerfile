@@ -6,8 +6,8 @@ RUN adduser --disabled-password --disabled-login --system --group \
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         net-tools && \
-    apt-get install -y --no-install-recommends \
-        -t experimental tinc && \
+    apt-get install -y -t experimental \
+        tinc && \
     apt-get clean
 
 EXPOSE 655/tcp 655/udp
