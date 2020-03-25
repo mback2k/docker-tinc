@@ -7,7 +7,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         net-tools && \
     apt-get install -y -t experimental \
-        tinc && \
+        tinc libncurses6 libreadline7 && \
     apt-get clean
 
 EXPOSE 655/tcp 655/udp
