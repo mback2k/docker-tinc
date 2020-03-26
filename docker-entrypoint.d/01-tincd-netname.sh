@@ -13,6 +13,8 @@ if [ -z "${TINC_NETNAME}" ]; then
     exit 2
 fi
 
+mkdir -p /usr/local/sbin
+
 echo "#!/bin/sh" > /usr/local/sbin/tincd
 echo "exec /usr/sbin/tincd -D -U ${TINC_USER} -n ${TINC_NETNAME}" >> /usr/local/sbin/tincd
 

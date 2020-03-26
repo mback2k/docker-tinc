@@ -1,14 +1,10 @@
-FROM mback2k/debian:experimental
+FROM mback2k/alpine:latest
 
-RUN adduser --disabled-password --disabled-login --system --group \
-        --uid 655 --home /etc/tinc tinc
+RUN addgroup -g 655 -S tinc
+RUN adduser -u 655 -h /etc/tinc -s /bin/false -S -D -G tinc tinc
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-        net-tools && \
-    apt-get install -y -t experimental \
-        tinc libncurses6 libreadline7 && \
-    apt-get clean
+RUN apk --no-cache --update upgrade && apk --no-cache add coreutils net-tools
+RUN apk --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ add tinc-pre
 
 EXPOSE 655/tcp 655/udp
 
