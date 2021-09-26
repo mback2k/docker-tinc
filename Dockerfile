@@ -1,4 +1,4 @@
-FROM mback2k/alpine:latest
+FROM ghcr.io/mback2k/docker-alpine:latest
 
 RUN addgroup -g 655 -S tinc
 RUN adduser -u 655 -h /etc/tinc -s /bin/false -S -D -G tinc tinc
